@@ -22,51 +22,70 @@ namespace RStringBuilder.Tests
 
         [Fact]
         [Trait("Category", "UnitTests")]
-        public void BuildStringContainingOnlyUpperCase()
+        public void BuildStringContainingUpperCase()
         {
             // Arrange
             var builder = Builder
                 .Create(1000)
-                .UseOnlyUpperCase();
+                .WithUpperCase();
 
             // Act
             var actual = builder.Generate();
 
             // Assert
-            actual.ShouldContainUpperCaseOnly();
+            actual.ShouldContainUpperCase();
         }
 
         [Fact]
         [Trait("Category", "UnitTests")]
-        public void BuildStringContainingOnlyLowerCase()
+        public void BuildStringContainingLowerCase()
         {
             // Arrange
             var builder = Builder
                 .Create(1000)
-                .UseOnlyLowerCase();
+                .WithLowerCase();
 
             // Act
             var actual = builder.Generate();
 
             // Assert
-            actual.ShouldContainLowerCaseOnly();
+            actual.ShouldContainLowerCase();
         }
 
         [Fact]
         [Trait("Category", "UnitTests")]
-        public void BuildStringContainingOnlyDigit()
+        public void BuildStringContainingDigit()
         {
             // Arrange
             var builder = Builder
                 .Create(1000)
-                .UseOnlyDigit();
+                .WithDigit();
 
             // Act
             var actual = builder.Generate();
 
             // Assert
-            actual.ShouldContainDigitOnly();
+            actual.ShouldContainDigit();
         }
 
+        [Fact]
+        [Trait("Category", "UnitTests")]
+        public void BuildStringContainingUpperCaseAndLowerCaseAndDigit()
+        {
+            // Arrange
+            var builder = Builder
+                .Create(1000)
+                .WithDigit()
+                .WithLowerCase()
+                .WithUpperCase();
+
+            // Act
+            var actual = builder.Generate();
+
+            // Assert
+            actual.ShouldContainDigit();
+            actual.ShouldContainLowerCase();
+            actual.ShouldContainUpperCase();
+        }
     }
 }

@@ -3,21 +3,21 @@ namespace RStringBuilder
 {
     public static class BuilderExtensions
     {
-        public static Builder UseOnlyUpperCase(this Builder builder)
+        public static Builder WithUpperCase(this Builder builder)
         {
-            builder._pattern = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            builder._pattern.Append("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
             return builder;
         }
 
-        public static Builder UseOnlyLowerCase(this Builder builder)
+        public static Builder WithLowerCase(this Builder builder)
         {
-            builder._pattern = "abcdefghijklmnopqrstuvwxyz";
+            builder._pattern.Append("abcdefghijklmnopqrstuvwxyz");
             return builder;
         }
 
-        public static Builder UseOnlyDigit(this Builder builder)
+        public static Builder WithDigit(this Builder builder)
         {
-            builder._pattern = "0123456789";
+            builder._pattern.Append("0123456789");
             return builder;
         }
     }

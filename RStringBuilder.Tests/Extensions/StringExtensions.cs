@@ -5,32 +5,30 @@ namespace RStringBuilder.Tests.Extensions
 {
     internal static class StringExtensions
     {
-        internal static void ShouldContainUpperCaseOnly(this string value)
-        {
-            var result = value.Any(char.IsLower);
-            if (result)
-            {
-                throw new ContainsException("Value does not contains only upper case", value);
-            }
-        }
-
-        internal static void ShouldContainLowerCaseOnly(this string value)
+        internal static void ShouldContainUpperCase(this string value)
         {
             var result = value.Any(char.IsUpper);
-            if (result)
+            if (!result)
             {
-                throw new ContainsException("Value does not contains only lower case", value);
+                throw new ContainsException("Value does not contains upper case.", value);
             }
         }
 
-        internal static void ShouldContainDigitOnly(this string value)
+        internal static void ShouldContainLowerCase(this string value)
         {
-            foreach(var character in value)
+            var result = value.Any(char.IsLower);
+            if (!result)
             {
-                if(!char.IsDigit(character))
-                {
-                    throw new ContainsException("Value does not contains only digit", value);
-                }
+                throw new ContainsException("Value does not contains lower case.", value);
+            }
+        }
+
+        internal static void ShouldContainDigit(this string value)
+        {
+            var result = value.Any(char.IsDigit);
+            if (!result)
+            {
+                throw new ContainsException("Value does not contains digit.", value);
             }
         }
     }

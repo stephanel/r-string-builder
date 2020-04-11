@@ -23,12 +23,6 @@ namespace RStringBuilder
             return new Builder(length);
         }
 
-        //public static Builder UseOnlyUpperCase(this Builder builder)
-        //{
-        //    builder._pattern = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        //    return builder;
-        //}
-
         public string Generate()
         {
             if(string.IsNullOrWhiteSpace(_pattern.ToString()))

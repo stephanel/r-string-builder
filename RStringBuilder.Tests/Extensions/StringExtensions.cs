@@ -31,5 +31,15 @@ namespace RStringBuilder.Tests.Extensions
                 throw new ContainsException("Value does not contain digit.", value);
             }
         }
+
+        internal static void ShouldContainWhiteSpace(this string value)
+        {
+            var result = value.Any(char.IsWhiteSpace);
+            if (!result)
+            {
+                throw new ContainsException("Value does not contain white space.", value);
+            }
+        }
+
     }
 }

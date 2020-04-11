@@ -20,5 +20,11 @@ namespace RStringBuilder
             builder._pattern.Append("0123456789");
             return builder;
         }
+
+        public static Builder WithWhiteSpace(this Builder builder)
+        {
+            builder._pattern.Append(" ");
+            return builder;
+        }
     }
 }

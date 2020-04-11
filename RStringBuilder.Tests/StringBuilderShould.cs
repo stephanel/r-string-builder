@@ -70,6 +70,22 @@ namespace RStringBuilder.Tests
 
         [Fact]
         [Trait("Category", "UnitTests")]
+        public void BuildStringContainingWhiteSpace()
+        {
+            // Arrange
+            var builder = Builder
+                .Create(1000)
+                .WithWhiteSpace();
+
+            // Act
+            var actual = builder.Generate();
+
+            // Assert
+            actual.ShouldContainWhiteSpace();
+        }
+
+        [Fact]
+        [Trait("Category", "UnitTests")]
         public void BuildStringContainingUpperCaseAndLowerCaseAndDigit()
         {
             // Arrange

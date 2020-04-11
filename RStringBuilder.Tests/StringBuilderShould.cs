@@ -52,5 +52,21 @@ namespace RStringBuilder.Tests
             actual.ShouldContainLowerCaseOnly();
         }
 
+        [Fact]
+        [Trait("Category", "UnitTests")]
+        public void BuildStringContainingOnlyDigit()
+        {
+            // Arrange
+            var builder = Builder
+                .Create(1000)
+                .UseOnlyDigit();
+
+            // Act
+            var actual = builder.Generate();
+
+            // Assert
+            actual.ShouldContainDigitOnly();
+        }
+
     }
 }

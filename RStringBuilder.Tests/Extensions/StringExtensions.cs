@@ -23,5 +23,15 @@ namespace RStringBuilder.Tests.Extensions
             }
         }
 
+        internal static void ShouldContainDigitOnly(this string value)
+        {
+            foreach(var character in value)
+            {
+                if(!char.IsDigit(character))
+                {
+                    throw new ContainsException("Value does not contains only digit", value);
+                }
+            }
+        }
     }
 }

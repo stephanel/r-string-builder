@@ -10,7 +10,7 @@ namespace RStringBuilder.Tests.Extensions
             var result = value.Any(char.IsUpper);
             if (!result)
             {
-                throw new ContainsException("Value does not contains upper case.", value);
+                throw new ContainsException("Value does not contain upper case.", value);
             }
         }
 
@@ -19,7 +19,7 @@ namespace RStringBuilder.Tests.Extensions
             var result = value.Any(char.IsLower);
             if (!result)
             {
-                throw new ContainsException("Value does not contains lower case.", value);
+                throw new ContainsException("Value does not contain lower case.", value);
             }
         }
 
@@ -28,7 +28,7 @@ namespace RStringBuilder.Tests.Extensions
             var result = value.Any(char.IsDigit);
             if (!result)
             {
-                throw new ContainsException("Value does not contains digit.", value);
+                throw new ContainsException("Value does not contain digit.", value);
             }
         }
     }

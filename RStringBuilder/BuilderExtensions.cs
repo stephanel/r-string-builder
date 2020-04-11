@@ -8,5 +8,11 @@ namespace RStringBuilder
             builder._pattern = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             return builder;
         }
+
+        public static Builder UseOnlyLowerCase(this Builder builder)
+        {
+            builder._pattern = "abcdefghijklmnopqrstuvwxyz";
+            return builder;
+        }
     }
 }

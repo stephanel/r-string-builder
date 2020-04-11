@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using Xunit;
 using Xunit.Sdk;
 
 namespace RStringBuilder.Tests.Extensions
@@ -14,5 +13,15 @@ namespace RStringBuilder.Tests.Extensions
                 throw new ContainsException("Value does not contains only upper case", value);
             }
         }
+
+        internal static void ShouldContainLowerCaseOnly(this string value)
+        {
+            var result = value.Any(char.IsUpper);
+            if (result)
+            {
+                throw new ContainsException("Value does not contains only lower case", value);
+            }
+        }
+
     }
 }

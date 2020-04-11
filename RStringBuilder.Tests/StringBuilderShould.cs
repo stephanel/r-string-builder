@@ -35,5 +35,22 @@ namespace RStringBuilder.Tests
             // Assert
             actual.ShouldContainUpperCaseOnly();
         }
+
+        [Fact]
+        [Trait("Category", "UnitTests")]
+        public void BuildStringContainingOnlyLowerCase()
+        {
+            // Arrange
+            var builder = Builder
+                .Create(1000)
+                .UseOnlyLowerCase();
+
+            // Act
+            var actual = builder.Generate();
+
+            // Assert
+            actual.ShouldContainLowerCaseOnly();
+        }
+
     }
 }

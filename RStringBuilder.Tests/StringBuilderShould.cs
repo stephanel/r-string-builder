@@ -86,13 +86,30 @@ namespace RStringBuilder.Tests
 
         [Fact]
         [Trait("Category", "UnitTests")]
-        public void BuildStringContainingUpperCaseAndLowerCaseAndDigit()
+        public void BuildStringContainingSpecialChars()
+        {
+            // Arrange
+            var builder = Builder
+                .Create(1000)
+                .WithSpecialChars();
+
+            // Act
+            var actual = builder.Generate();
+
+            // Assert
+            actual.ShouldContainSpecialChars();
+        }
+
+        [Fact]
+        [Trait("Category", "UnitTests")]
+        public void BuildStringContainingAllPossibleCharacters()
         {
             // Arrange
             var builder = Builder
                 .Create(1000)
                 .WithDigit()
                 .WithLowerCase()
+                .WithSpecialChars()
                 .WithUpperCase();
 
             // Act
@@ -101,6 +118,7 @@ namespace RStringBuilder.Tests
             // Assert
             actual.ShouldContainDigit();
             actual.ShouldContainLowerCase();
+            actual.ShouldContainSpecialChars();
             actual.ShouldContainUpperCase();
         }
     }

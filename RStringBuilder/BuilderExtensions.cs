@@ -26,5 +26,11 @@ namespace RStringBuilder
             builder._pattern.Append(" ");
             return builder;
         }
+
+        public static Builder WithSpecialChars(this Builder builder)
+        {
+            builder._pattern.Append(Builder.SpecialChars);
+            return builder;
+        }
     }
 }

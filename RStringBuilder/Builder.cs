@@ -6,6 +6,8 @@ namespace RStringBuilder
 {
     public class Builder
     {
+        public const string SpecialChars = @"/*-+_@&$#%";
+
         internal readonly int _length;
         internal static readonly Random random = new Random();
 

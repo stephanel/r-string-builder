@@ -41,5 +41,14 @@ namespace RStringBuilder.Tests.Extensions
             }
         }
 
+        internal static void ShouldContainSpecialChars(this string value)
+        {
+            string specialChars = Builder.SpecialChars;
+            var result = value.Any(c => specialChars.Contains(c));
+            if (!result)
+            {
+                throw new ContainsException("Value does not contain special chars.", value);
+            }
+        }
     }
 }

@@ -8,11 +8,11 @@ namespace RStringBuilder
     {
         public const string SpecialChars = @"/*-+_@&$#%";
 
-        internal readonly int _length;
-        internal static readonly Random random = new Random();
+        private readonly int _length;
+        private static readonly Random random = new Random();
 
-        internal string _defaultPattern = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        internal StringBuilder _pattern = new StringBuilder();
+        private readonly string _defaultPattern = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        internal StringBuilder Pattern { get; } = new StringBuilder();
 
         internal Builder(int length)
         {
@@ -27,12 +27,12 @@ namespace RStringBuilder
 
         public string Generate()
         {
-            if(string.IsNullOrWhiteSpace(_pattern.ToString()))
+            if(string.IsNullOrWhiteSpace(Pattern.ToString()))
             {
-                _pattern.Append(_defaultPattern);
+                Pattern.Append(_defaultPattern);
             }
 
-            return new string(Enumerable.Repeat(_pattern, _length)
+            return new string(Enumerable.Repeat(Pattern, _length)
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
     }

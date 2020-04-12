@@ -5,31 +5,31 @@ namespace RStringBuilder
     {
         public static Builder WithUpperCase(this Builder builder)
         {
-            builder._pattern.Append("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+            builder.Pattern.Append("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
             return builder;
         }
 
         public static Builder WithLowerCase(this Builder builder)
         {
-            builder._pattern.Append("abcdefghijklmnopqrstuvwxyz");
+            builder.Pattern.Append("abcdefghijklmnopqrstuvwxyz");
             return builder;
         }
 
         public static Builder WithDigit(this Builder builder)
         {
-            builder._pattern.Append("0123456789");
+            builder.Pattern.Append("0123456789");
             return builder;
         }
 
         public static Builder WithWhiteSpace(this Builder builder)
         {
-            builder._pattern.Append(" ");
+            builder.Pattern.Append(" ");
             return builder;
         }
 
         public static Builder WithSpecialChars(this Builder builder)
         {
-            builder._pattern.Append(Builder.SpecialChars);
+            builder.Pattern.Append(Builder.SpecialChars);
             return builder;
         }
     }

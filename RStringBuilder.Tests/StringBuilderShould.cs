@@ -28,7 +28,7 @@ namespace RStringBuilder.Tests
             // Arrange
             var builder = Builder
                 .Create()
-                .WithUpperCase();
+                .UseUpperCase();
 
             // Act
             var actual = builder.Generate();
@@ -44,7 +44,7 @@ namespace RStringBuilder.Tests
             // Arrange
             var builder = Builder
                 .Create()
-                .WithLowerCase();
+                .UseLowerCase();
 
             // Act
             var actual = builder.Generate();
@@ -60,7 +60,7 @@ namespace RStringBuilder.Tests
             // Arrange
             var builder = Builder
                 .Create()
-                .WithDigit();
+                .UseDigit();
 
             // Act
             var actual = builder.Generate();
@@ -76,7 +76,7 @@ namespace RStringBuilder.Tests
             // Arrange
             var builder = Builder
                 .Create()
-                .WithWhiteSpace();
+                .UseWhiteSpace();
 
             // Act
             var actual = builder.Generate();
@@ -92,7 +92,7 @@ namespace RStringBuilder.Tests
             // Arrange
             var builder = Builder
                 .Create()
-                .WithSpecialChars();
+                .UseSpecialChars();
 
             // Act
             var actual = builder.Generate();
@@ -108,10 +108,10 @@ namespace RStringBuilder.Tests
             // Arrange
             var builder = Builder
                 .Create()
-                .WithDigit()
-                .WithLowerCase()
-                .WithSpecialChars()
-                .WithUpperCase();
+                .UseDigit()
+                .UseLowerCase()
+                .UseSpecialChars()
+                .UseUpperCase();
 
             // Act
             var actual = builder.Generate();

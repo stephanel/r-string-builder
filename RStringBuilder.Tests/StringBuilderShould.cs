@@ -8,16 +8,16 @@ namespace RStringBuilder.Tests
     {
         [Fact]
         [Trait("Category", "UnitTests")]
-        public void GenerateString10CharactersLong()
+        public void GenerateString()
         {
             // Arrange
-            var builder = Builder.Create(10);
+            var builder = Builder.Create();
 
             // Act
             var actual = builder.Generate();
 
             // Assert
-            actual.Length.Should().Be(10);
+            actual.Length.Should().NotBe(null);
         }
 
         [Fact]
@@ -26,7 +26,7 @@ namespace RStringBuilder.Tests
         {
             // Arrange
             var builder = Builder
-                .Create(1000)
+                .Create()
                 .WithUpperCase();
 
             // Act
@@ -42,7 +42,7 @@ namespace RStringBuilder.Tests
         {
             // Arrange
             var builder = Builder
-                .Create(1000)
+                .Create()
                 .WithLowerCase();
 
             // Act
@@ -58,7 +58,7 @@ namespace RStringBuilder.Tests
         {
             // Arrange
             var builder = Builder
-                .Create(1000)
+                .Create()
                 .WithDigit();
 
             // Act
@@ -74,7 +74,7 @@ namespace RStringBuilder.Tests
         {
             // Arrange
             var builder = Builder
-                .Create(1000)
+                .Create()
                 .WithWhiteSpace();
 
             // Act
@@ -90,7 +90,7 @@ namespace RStringBuilder.Tests
         {
             // Arrange
             var builder = Builder
-                .Create(1000)
+                .Create()
                 .WithSpecialChars();
 
             // Act
@@ -106,7 +106,7 @@ namespace RStringBuilder.Tests
         {
             // Arrange
             var builder = Builder
-                .Create(1000)
+                .Create()
                 .WithDigit()
                 .WithLowerCase()
                 .WithSpecialChars()

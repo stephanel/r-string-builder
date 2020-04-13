@@ -32,5 +32,11 @@ namespace RStringBuilder
             builder.Pattern.Append(Builder.SpecialChars);
             return builder;
         }
+
+        public static Builder WithLength(this Builder builder, int length)
+        {
+            builder.Length = length;
+            return builder;
+        }
     }
 }

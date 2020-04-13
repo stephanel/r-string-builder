@@ -8,7 +8,7 @@ namespace RStringBuilder
     {
         public const string SpecialChars = @"/*-+_@&$#%";
 
-        private int _length = 0;
+        internal int Length { get; set; } = 0;
         private const int DefaultMaxLength = 1000;
         private static readonly Random random = new Random();
 
@@ -30,12 +30,12 @@ namespace RStringBuilder
                 Pattern.Append(_defaultPattern);
             }
 
-            if(_length == 0)
+            if(Length == 0)
             {
-                _length = new Random().Next(DefaultMaxLength);
+                Length = new Random().Next(DefaultMaxLength);
             }
 
-            return new string(Enumerable.Repeat(Pattern, _length)
+            return new string(Enumerable.Repeat(Pattern, Length)
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
     }

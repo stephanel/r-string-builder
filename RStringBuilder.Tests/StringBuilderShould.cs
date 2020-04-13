@@ -8,16 +8,17 @@ namespace RStringBuilder.Tests
     {
         [Fact]
         [Trait("Category", "UnitTests")]
-        public void GenerateString()
+        public void Generate10CharacterString()
         {
             // Arrange
-            var builder = Builder.Create();
+            var builder = Builder.Create()
+                .WithLength(10);
 
             // Act
             var actual = builder.Generate();
 
             // Assert
-            actual.Length.Should().NotBe(null);
+            actual.Length.Should().Be(10);
         }
 
         [Fact]
